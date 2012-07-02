@@ -18,8 +18,10 @@ prettify: true
 </article>
 {% endfor %}
 
-{% if true || site.posts.size > 10 %}
 <div style="text-align: center;">
+{% if site.posts.size > 10 %}
     <a href="{{ BASE_PATH  }}archive.html" class="btn btn-large">View all artilces list »</a>
-</div>
+{% else %}
+    <a class="btn btn-large disabled">There is no more posts</a>
 {% endif %}
+</div>
