@@ -1,0 +1,14 @@
+{% assign page_title = page.title || 'Unknown page title' %}
+<header class="header-box">
+    <h1>{{ page_title }} {% if page.tagline %}<small>{{ page.tagline }}</small>{% endif %}</h1>
+</header>
+
+<section>
+    <div class="row">
+        <div class="span12">
+            <div class="page-box">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</section>

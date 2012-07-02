@@ -1,0 +1,36 @@
+{% assign page_title = page.title || 'Unknown page title' %}
+<header class="header-box">
+    <h1>{{ page_title }} {% if page.tagline %}<small>{{ page.tagline }}</small>{% endif %}</h1>
+</header>
+
+<section>
+    <div class="row">
+        <div class="span8">
+            <section>
+                {{ content }}
+            </section>
+        </div>
+
+        <div class="span4">
+            <section class="sidebar-box">
+                <div class="category-box clearfix">
+                    <h4><i class="icon-black icon-bookmark"></i>Categories</h4>
+                    <ul class="nav nav-list">
+                        {% assign categories_list = site.categories %}
+                        {% include JB/categories_list %}
+                    </ul>
+                </div>
+                <div class="tag-box clearfix">
+                    <h4><i class="icon-black icon-tags"></i>Tags</h4>
+                    {% assign tags_list = site.tags %}
+                    {% include themes/blue/partial/tags_list %}
+                </div>
+                <div class="link-box clearfix">
+                    <h4><i class="icon-black icon-globe"></i>Links</h4>
+                    {% assign links_list = site.links %}
+                    {% include themes/blue/partial/links_list %}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

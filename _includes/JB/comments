@@ -1,5 +1,7 @@
 {% if site.JB.comments.provider and page.comments != false %}
 
+<a href="#reply"></a>
+
 {% case site.JB.comments.provider %}
 {% when "disqus" %}
   {% include JB/comments-providers/disqus %}

@@ -1,0 +1,48 @@
+{% assign page_title = page.title || 'Unknown post title' %}
+<header class="header-box">
+    <h1>{{ page_title }} {% if page.tagline %}<small>{{ page.tagline }}</small>{% endif %}</h1>
+</header>
+
+<section>
+<div class="row">
+    <div class="span12">
+        <div class="post-box">
+            <div class="clearfix">
+                <div class="date pull-right"><span>{{ page.date | date_to_long_string }}</span></div>
+            </div>
+
+            {{ content }}
+
+            <div>
+                {% unless page.tags == empty %}
+                <ul class="tag_box">
+                {% assign tags_list = page.tags %}
+                {% include JB/tags_list %}
+                </ul>
+                {% endunless %}
+            </div>
+
+            <hr>
+
+            <div class="pagination">
+                <ul>
+                {% if page.previous %}
+                    <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+                {% else %}
+                    <li class="prev disabled"><a>&larr; Previous</a></li>
+                {% endif %}
+                    <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+                {% if page.next %}
+                    <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+                {% else %}
+                    <li class="next disabled"><a>Next &rarr;</a>
+                {% endif %}
+                </ul>
+            </div>
+            <hr>
+            {% include JB/comments %}
+        </div>
+
+    </div>
+</div>
+</section>

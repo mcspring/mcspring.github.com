@@ -1,0 +1,8 @@
+{% if links_list %}
+<ul class="nav nav-list">
+    {% for link in links_list %}
+    <li><a href="{{ link.href }}" title="{{ link.title }}" target="_blank">{{ link.title }}{% if link.tagline %} <small>{{ link.tagline }}</small>{% endif %}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% assign links_list = nil %}
