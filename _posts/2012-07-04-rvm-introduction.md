@@ -3,7 +3,7 @@ layout: post
 title: "RVM 简明教程"
 tagline: for the beginer
 description: ""
-category: [tutorial]
+category: tutorial
 tags: [rvm, ruby]
 prettify: true
 ---
