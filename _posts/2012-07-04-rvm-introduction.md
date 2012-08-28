@@ -31,7 +31,7 @@ prettify: true
 $curl -L get.rvm.io | bash -s stable
 $source ~/.bashrc &amp;&amp; source ~/.bash_profile
 </pre>
->注意：安装*rvm*后你可以在`.bash_profile`中加入`[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"`命令，之后rvm命令便可以在所有shell中自动生效。
+>注意：安装*rvm*后推荐在`.bash_profile`中加入`[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"`命令，之后`rvm`命令便可以在shell中自动生效。
 
 ###2. 使用rvm
 **a) 列出所有可用的ruby版本**
