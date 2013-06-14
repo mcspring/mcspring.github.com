@@ -53,8 +53,8 @@ $rvm install 2.0.0
 </pre>
 
 >注意：<br>
-1) `rvm install verb`会将指定的ruby环境安装到用户的`~/.rvm/rubies/verb`路径下。<br>
-2) 如果`rvm install verb`出错，你可以运行`rvm requirements`查看并解决*rvm*的安装问题。
+>1) `rvm install verb`会将指定的ruby环境安装到用户的`~/.rvm/rubies/verb`路径下。<br>
+>2) 如果`rvm install verb`出错，你可以运行`rvm requirements`查看并解决*rvm*的安装问题。
 
 **d) 选择已安装的某的ruby版本**
 <pre class="prettyprint lang-bash">
