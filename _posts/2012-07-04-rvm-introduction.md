@@ -36,6 +36,7 @@ $source ~/.bashrc &amp;&amp; source ~/.bash_profile
 ###2. 使用rvm
 **a) 列出所有可用的ruby版本**
 <pre class="prettyprint lang-bash">
+$rvm get stable
 $rvm list known
 </pre>
 
@@ -48,21 +49,23 @@ $rvm list
 
 **c) 安装某指定的ruby版本**
 <pre class="prettyprint lang-bash">
-$rvm install 1.9.3
+$rvm install 2.0.0
 </pre>
 
->注意：`rvm install verb`会将指定的ruby环境安装到用户的`~/.rvm/rubies/verb`路径下。
+>注意：<br>
+1) `rvm install verb`会将指定的ruby环境安装到用户的`~/.rvm/rubies/verb`路径下。<br>
+2) 如果`rvm install verb`出错，你可以运行`rvm requirements`查看并解决*rvm*的安装问题。
 
 **d) 选择已安装的某的ruby版本**
 <pre class="prettyprint lang-bash">
-$rvm use 1.9.3
+$rvm use 2.0.0
 </pre>
 
->注意：你可以使用`rvm use 1.9.3 --default`命令同时将其设为系统默认版本。
+>注意：你可以使用`rvm use 2.0.0 --default`命令同时将其设为系统默认版本。
 
 **e) 卸载某指定的ruby版本**
 <pre class="prettyprint lang-bash">
-$rvm remove 1.9.3
+$rvm remove 2.0.0
 </pre>
 
 **f) 列出当前ruby环境下的gemset**
@@ -70,36 +73,36 @@ $rvm remove 1.9.3
 $rvm gemset list
 </pre>
 
->注意：gemset是限定在ruby版本下的，即你在ruby 1.9.3下创建的*gemset-name*，当你切换到ruby 1.8.7下时就无法访问了。
+>注意：gemset是限定在ruby版本下的，即你在ruby 2.0.0下创建的*gemset-name*，当你切换到ruby 1.9.3下时就无法访问了。
 
 **g) 创建gemset**
 <pre class="prettyprint lang-bash">
-$rvm use 1.8.7
-$rvm gemset create rails309
+$rvm use 2.0.0
+$rvm gemset create rails3
 </pre>
 
 **h) 切换gemset**
 <pre class="prettyprint lang-bash">
-$rvm use 1.8.7
-$rvm gemset use rails309
+$rvm use 1.9.3
+$rvm gemset use rails3
 </pre>
 
 >注意：<br/>
 >1) 目标*gemset-name*在当前ruby环境下必须已经存在，否则你使用`rvm gemset use gemset-name --create`命令在*gemset-name*不存在时自动创建。<br/>
->2) 你可以在切换ruby环境时使用`rvm use 1.8.7@rails309`命令指定默认使用的gemset。
+>2) 你可以在切换ruby环境时使用`rvm use 1.9.3@rails3`命令指定默认使用的gemset。
 
 **i) 清空指定的gemset**
 <pre class="prettyprint lang-bash">
-$rvm use 1.8.7
-$rvm gemset empty rails309
+$rvm use 1.9.3
+$rvm gemset empty rails3
 </pre>
 
->注意：你可以使用`rvm gemset empty 1.8.7@rails309`命令清空指定ruby环境下的某个gemset。
+>注意：你可以使用`rvm gemset empty 1.9.3@rails3`命令清空指定ruby环境下的某个gemset。
 
 **j) 删除指定的gemset**
 <pre class="prettyprint lang-bash">
-$rvm use 1.8.7
-$rvm gemset delete rails309
+$rvm use 1.9.3
+$rvm gemset delete rails3
 </pre>
 
 **k) rvm项目配置文件**
@@ -111,3 +114,5 @@ rvm install 1.9.3
 rvm use 1.9.3
 rvm gemset use rails32 --create
 </pre>
+
+>注意：最新版的*rvm*支持通用的*ruby version*格式配置文件，你可以通过`rvm rvmrc create 2.0.0@rails3 --ruby-version`指令自动创建项目配置文件。
