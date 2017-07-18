@@ -11,6 +11,7 @@ highlighter: pygments
 #
 name : MC@Spring
 title : Teach Yourself Programming in 10 Years - Peter Norvig!
+theme : blue
 author :
   name : Spring MC
   email : Heresy.Mc@gmail.com
