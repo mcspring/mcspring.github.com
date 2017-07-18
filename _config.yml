@@ -3,7 +3,6 @@
 permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
 highlighter: pygments
 
 # Themes are encouraged to use these universal variables
@@ -11,13 +10,14 @@ highlighter: pygments
 #
 name : MC@Spring
 title : Teach Yourself Programming in 10 Years - Peter Norvig!
-theme : blue
 author :
   name : Spring MC
   email : Heresy.Mc@gmail.com
   github : mcspring
   twitter : mcspring
   feedburner : mcspring
+
+# theme : blue
 
 # Links
 #
